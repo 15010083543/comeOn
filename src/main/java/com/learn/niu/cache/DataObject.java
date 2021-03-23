@@ -22,6 +22,7 @@ public class DataObject {
   public static void main(String[] args) {
     Cache<String, DataObject> cache = Caffeine.newBuilder()
             .expireAfterWrite(1, TimeUnit.SECONDS)
+            // 最大数据长度一万条
             .maximumSize(100)
             .build();
 
